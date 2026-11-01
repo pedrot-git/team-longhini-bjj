@@ -83,6 +83,68 @@
   document.querySelectorAll('[data-schedule-filter]').forEach(link => link.addEventListener('click', () => renderSchedule(link.dataset.scheduleFilter)));
   renderSchedule();
 
+  const trainingVideo = document.querySelector('[data-loop-video]');
+  const videoToggle = document.querySelector('.video-toggle');
+  const videoFallback = document.querySelector('.video-fallback');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let videoInView = false;
+  let videoPausedByUser = false;
+  let motionPlaybackAllowed = !reducedMotion.matches;
+
+  function updateVideoControl() {
+    const playing = !trainingVideo.paused;
+    videoToggle.querySelector('.video-toggle-label').textContent = playing ? 'Pausar vídeo' : 'Reproduzir vídeo';
+    videoToggle.querySelector('.video-toggle-icon').setAttribute('d', playing ? 'M9 5v14M15 5v14' : 'm9 5 10 7-10 7Z');
+  }
+  async function playTrainingVideo() {
+    if (!trainingVideo.getAttribute('src')) trainingVideo.src = trainingVideo.dataset.src;
+    trainingVideo.muted = true;
+    try {
+      await trainingVideo.play();
+    } catch {
+      // Alguns navegadores exigem o toque no botão para iniciar a reprodução.
+      updateVideoControl();
+    }
+  }
+  function syncVideoPlayback() {
+    if (videoInView && !document.hidden && !videoPausedByUser && motionPlaybackAllowed) {
+      playTrainingVideo();
+    } else {
+      trainingVideo.pause();
+    }
+  }
+  videoToggle.hidden = false;
+  trainingVideo.addEventListener('play', updateVideoControl);
+  trainingVideo.addEventListener('pause', updateVideoControl);
+  trainingVideo.addEventListener('error', () => {
+    videoToggle.hidden = true;
+    videoFallback.hidden = false;
+  });
+  videoToggle.addEventListener('click', () => {
+    if (trainingVideo.paused) {
+      videoPausedByUser = false;
+      motionPlaybackAllowed = true;
+      playTrainingVideo();
+    } else {
+      videoPausedByUser = true;
+      trainingVideo.pause();
+    }
+  });
+  reducedMotion.addEventListener('change', () => {
+    motionPlaybackAllowed = !reducedMotion.matches;
+    syncVideoPlayback();
+  });
+  document.addEventListener('visibilitychange', syncVideoPlayback);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      videoInView = entries[0].isIntersecting;
+      syncVideoPlayback();
+    }, { threshold: 0.15 }).observe(trainingVideo);
+  } else {
+    videoInView = true;
+    syncVideoPlayback();
+  }
+
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.getElementById('navigation');
   function setMenu(open, returnFocus = false) {

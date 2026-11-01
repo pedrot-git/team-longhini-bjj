@@ -14,3 +14,13 @@
 @media(min-width:600px) and (max-width:767px){.hero-visual{height:480px}.hero-photo{object-position:center 30%}.hero-copy{padding-top:52px}.school-image img{aspect-ratio:1.6}.class-photo{height:400px}.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.day-column{margin:0}.lesson{grid-template-columns:60px 1fr;column-gap:8px}.lesson-list{padding-inline:14px}.lesson time{font-size:28px}.lesson-link{font-size:11px}.day-column h3{font-size:13px;padding-inline:14px}.day-short{display:none}}
 @media(max-width:374px){.brand>span{font-size:18px}.brand small{font-size:7px}.brand{gap:9px}.menu-toggle{font-size:12px}.hero h1{font-size:53px}.hero-actions{gap:10px}.hero-actions .button{padding-inline:12px;font-size:13px}.hero-actions .text-link{font-size:13px}.filter{padding-inline:20px}.school-values span+span:before{margin-inline:10px}.big-price{font-size:94px}.price-display .text-link{font-size:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Vídeo vertical original: quadro inteiro e reprodução sem som. */
+.video-frame{background:#111}
+.video-frame video{display:block;width:100%;height:100%;object-fit:contain;background:#111}
+.video-toggle{position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 13px;border:1px solid #777;background:#111e;color:#fff;font-size:12px;font-weight:600;line-height:1.3;z-index:1}
+.video-toggle:hover{background:#292929}
+.video-toggle svg{width:17px;height:17px}
+.video-fallback{position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;min-height:44px;background:#111;color:#fff;padding:10px 14px;border:1px solid #777;font-size:13px}
+.video-toggle[hidden],.video-fallback[hidden]{display:none}
+@media(max-width:767px){.video-toggle{top:12px;right:12px}.video-frame .photo-label{left:12px;bottom:12px;font-size:9px;padding:7px 9px}}

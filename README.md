@@ -31,6 +31,14 @@ Fotografias do perfil https://www.instagram.com/teamlonghinibjj/, utilizadas con
 
 Imagens convertidas em WebP e hospedadas localmente; o site não depende de URLs temporárias do Instagram. O mapa incorporado consulta o Google Maps e tem link externo alternativo.
 
+### Mídias enviadas pelo solicitante
+
+- Foto inicial: `assets/professor-original.jpg`, arquivo original de 1104 × 1472 px enviado em 01/11/2026, sem redução de resolução.
+- Turma adulta: `assets/jiujitsu-adulto.mp4`, clipe original `DLARuxzRNPW_NA.mp4`, com aproximadamente 34 segundos. A reprodução é contínua, sem som e dentro da página; o enquadramento vertical é preservado.
+- `assets/jiujitsu-adulto-capa.jpg` é uma imagem do próprio vídeo, exibida antes da reprodução.
+- O vídeo carrega quando a seção entra na tela e pausa fora da área visível. Há botão para pausar ou reproduzir. A preferência do dispositivo por movimento reduzido mantém a capa até o visitante iniciar o vídeo.
+- O commit `ba5df73` preserva o estado anterior à troca dessas mídias.
+
 Barlow e Barlow Condensed distribuídas sob a SIL Open Font License 1.1. Os termos e créditos ficam em `assets/OFL-*.txt`.
 
 ## Publicação no GitHub Pages

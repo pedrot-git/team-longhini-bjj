@@ -14,7 +14,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:image" content="https://pedrot-git.github.io/team-longhini-bjj/assets/equipe.webp">
   <link rel="icon" href="assets/logo.webp" type="image/webp">
-  <link rel="preload" href="assets/professor.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/professor-original.jpg" as="image" fetchpriority="high">
   <link rel="preload" href="assets/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts.css">
@@ -57,7 +57,7 @@
           <div class="hero-price"><span class="price-prefix">ADULTO E INFANTIL</span><p><span data-price>R$ 120</span><span class="per-month">/mês</span></p></div>
         </div>
         <div class="hero-visual">
-          <img class="hero-photo" src="assets/professor.webp" alt="Professor da Team Longhini de quimono branco e faixa preta no ambiente de treino" width="480" height="640" fetchpriority="high">
+          <img class="hero-photo" src="assets/professor-original.jpg" alt="Professor da Team Longhini de quimono branco e faixa preta no ambiente de treino" width="1104" height="1472" fetchpriority="high">
           <div class="photo-caption"><span class="caption-line"></span><span>TEAM LONGHINI BJJ<small>O aprendizado começa com o primeiro passo.</small></span></div>
           <span class="vertical-word" aria-hidden="true">RESPEITO. DISCIPLINA. EVOLUÇÃO.</span>
         </div>
@@ -76,7 +76,13 @@
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow dark"><span class="section-number">02 /</span> ENCONTRE SEU CAMINHO</p><h2 id="classes-title">SEU LUGAR <span>É AQUI.</span></h2></div><p>Para quem vai dar o primeiro passo.<br>Para quem quer continuar evoluindo.</p></div>
         <div class="class-cards">
-          <article class="class-card"><div class="class-photo adult-photo"><img src="assets/treino.webp" alt="Dois praticantes treinando uma posição de jiu-jitsu no tatame" width="360" height="640" loading="lazy"><span class="photo-label">JIU-JITSU ADULTO</span></div><div class="class-content"><span class="card-index" aria-hidden="true">01</span><h3>ADULTO</h3><p>Comece pelas bases ou dê continuidade ao seu treino. Consulte os horários de iniciantes e avançados e encontre sua turma.</p><a class="text-link" href="#horarios" data-schedule-filter="Adulto">Ver horários de adulto <svg aria-hidden="true" focusable="false"><use href="#arrow"/></svg></a></div></article>
+          <article class="class-card"><div class="class-photo adult-photo video-frame">
+            <video id="adult-training-video" data-loop-video data-src="assets/jiujitsu-adulto.mp4" autoplay muted loop playsinline preload="none" poster="assets/jiujitsu-adulto-capa.jpg" width="720" height="1280" aria-label="Vídeo de treino da turma adulta de jiu-jitsu da Team Longhini"></video>
+            <span class="photo-label">JIU-JITSU ADULTO</span>
+            <button type="button" class="video-toggle" aria-controls="adult-training-video" hidden><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path class="video-toggle-icon" d="m9 5 10 7-10 7Z"/></svg><span class="video-toggle-label">Reproduzir vídeo</span></button>
+            <a class="video-fallback" href="assets/jiujitsu-adulto.mp4" target="_blank" rel="noopener noreferrer" hidden>Abrir vídeo ↗</a>
+            <noscript><a class="video-fallback" href="assets/jiujitsu-adulto.mp4">Assistir ao vídeo ↗</a></noscript>
+          </div><div class="class-content"><span class="card-index" aria-hidden="true">01</span><h3>ADULTO</h3><p>Comece pelas bases ou dê continuidade ao seu treino. Consulte os horários de iniciantes e avançados e encontre sua turma.</p><a class="text-link" href="#horarios" data-schedule-filter="Adulto">Ver horários de adulto <svg aria-hidden="true" focusable="false"><use href="#arrow"/></svg></a></div></article>
           <article class="class-card"><div class="class-photo kids-photo"><img src="assets/infantil.webp" alt="Professor da Team Longhini ao lado de dois alunos infantis de quimono no tatame" width="640" height="640" loading="lazy"><span class="photo-label">JIU-JITSU INFANTIL</span></div><div class="class-content"><span class="card-index" aria-hidden="true">02</span><h3>INFANTIL</h3><p>Um primeiro contato com o jiu-jitsu e um caminho de aprendizado. Pais e responsáveis podem conversar com a equipe sobre a turma indicada.</p><a class="text-link" href="#horarios" data-schedule-filter="Infantil">Ver horários do infantil <svg aria-hidden="true" focusable="false"><use href="#arrow"/></svg></a></div></article>
         </div>
       </div>
